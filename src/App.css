@@ -1,0 +1,45 @@
+.container_home {
+  background-color: #fff; /*cor da div*/
+  max-width: 800px; /*maximo tamanho que ele vai ter */
+  margin: 40px auto; /*vai centralizar a div*/
+
+  display: flex;
+  padding: 5px; /*espaçamento interno dos elementos*/
+}
+
+.container_esquerda {
+  display: flex;
+  align-items: center; /*vai centralizar*/
+  justify-content: center; /*vai centralizar*/
+  flex-direction: column; /*elementos em coluna um abaixo do outro*/
+  gap: 20px; /*espaçamento entre os elementos*/
+  width: 70%; /*o tamanho maximo que ele pode chegar*/
+}
+
+.container_direita {
+  width: 30%; /*largura que a div vai ter*/
+
+  display: flex;
+  align-items: center; /*vai centralizar*/
+  justify-content: center; /*vai centralizar*/
+  flex-direction: column; /*elementos em coluna um abaixo do outro*/
+}
+
+.container_input {
+  height: 34px; /*altura do input*/
+  border: 1px solid #ccc; /*vai ter uma borda solida de 1px*/
+  border-radius: 12px; /*vai ficar com as bordas arredondadas*/
+  margin-bottom: 20px; /*vai dar distancia entre os inputs*/
+
+  display: flex;
+  justify-content: center; /*vai centralizar o input*/
+  align-items: center; /*vai centralizar o input*/
+  padding: 2px; /*espaçamento interno dos elementos */
+}
+
+.container_input input{
+  width: 90%; /*tamanho do input vai ter dentro da div*/
+  border:none; /*sem bordas*/
+  outline: none; /*remover a borda azul do input quando ele estiver selecionado*/
+
+}
