@@ -1,45 +1,26 @@
-.container_home {
-  background-color: #fff; /*cor da div*/
-  max-width: 800px; /*maximo tamanho que ele vai ter */
-  margin: 40px auto; /*vai centralizar a div*/
 
-  display: flex;
-  padding: 5px; /*espaçamento interno dos elementos*/
+.botao_logar{
+  background: linear-gradient(90deg, #5f43b2 0%, #7a4df4 100%);
+  color:#fff; /*cor da fonte*/
+  border-radius: 8px; /*borda arredondada*/
+  height: 34px; /*altura do botao*/
+  width: 70%; /*largura do botao, que é o mesmo do container_input*/
+  border: none; /*sem borda*/
+  cursor: pointer; /*muda o cursor do mouse quando passa o mouse nele */
+  box-shadow: 0 6px 14px rgba(95, 67, 178, 0.28);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    filter 0.12s ease;
 }
 
-.container_esquerda {
-  display: flex;
-  align-items: center; /*vai centralizar*/
-  justify-content: center; /*vai centralizar*/
-  flex-direction: column; /*elementos em coluna um abaixo do outro*/
-  gap: 20px; /*espaçamento entre os elementos*/
-  width: 70%; /*o tamanho maximo que ele pode chegar*/
+.botao_logar:active{
+    transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(95, 67, 178, 0.35);
+  filter: brightness(0.95); 
 }
 
-.container_direita {
-  width: 30%; /*largura que a div vai ter*/
-
-  display: flex;
-  align-items: center; /*vai centralizar*/
-  justify-content: center; /*vai centralizar*/
-  flex-direction: column; /*elementos em coluna um abaixo do outro*/
-}
-
-.container_input {
-  height: 34px; /*altura do input*/
-  border: 1px solid #ccc; /*vai ter uma borda solida de 1px*/
-  border-radius: 12px; /*vai ficar com as bordas arredondadas*/
-  margin-bottom: 20px; /*vai dar distancia entre os inputs*/
-
-  display: flex;
-  justify-content: center; /*vai centralizar o input*/
-  align-items: center; /*vai centralizar o input*/
-  padding: 2px; /*espaçamento interno dos elementos */
-}
-
-.container_input input{
-  width: 90%; /*tamanho do input vai ter dentro da div*/
-  border:none; /*sem bordas*/
-  outline: none; /*remover a borda azul do input quando ele estiver selecionado*/
-
+.link_criar_conta{
+  color:#5f43b2; /*cor do link*/
+  text-decoration: none; /*remove o sublinhado do link*/
 }

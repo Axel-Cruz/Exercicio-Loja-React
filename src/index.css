@@ -1,3 +1,53 @@
 body {
   background-color: #9B83CD;
 }
+
+/*Container das telas Principal*/
+.container_telas_iniciais{
+    max-width: 800px; /*maximo de tamanho*/
+    margin:40px auto; /*vai centralizar a div*/
+    background-color: #fff;
+
+    display: flex; /*um ao lado do outro flexivel*/
+}
+.container_esquerda_telas_iniciais{
+  display: flex;
+  align-items: center; /*vai centralizar*/
+  justify-content: center; /*vai centralizar*/
+  flex-direction: column; /*elementos em coluna um abaixo do outro*/
+  gap: 20px; /*espaçamento entre os elementos*/
+  width: 55%; /*o tamanho maximo que ele pode chegar*/
+  background: #5f43b2; /*cor da div*/
+  color: #fff; /*cor da fonte*/
+}
+.container_direita_telas_iniciais {
+  width: 45%; /*largura que a div vai ter*/
+
+  display: flex;
+  align-items: center; /*vai centralizar*/
+  justify-content: center; /*vai centralizar*/
+  flex-direction: column; /*elementos em coluna um abaixo do outro*/
+}
+
+/*Estilos do input padrao da aplicação*/
+
+.container_input {
+  height: 34px; /*altura do input*/
+  border: 1px solid #ccc; /*vai ter uma borda solida de 1px*/
+  border-radius: 12px; /*vai ficar com as bordas arredondadas*/
+  margin-bottom: 20px; /*vai dar distancia entre os inputs*/
+
+  display: flex;
+  justify-content: center; /*vai centralizar o input*/
+  align-items: center; /*vai centralizar o input*/
+  padding: 2px; /*espaçamento interno dos elementos */
+
+  width: 70%; /*tamanho do input*/
+}
+
+.container_input input{
+  width: 90%; /*tamanho do input vai ter dentro da div*/
+  border:none; /*sem bordas*/
+  outline: none; /*remover a borda azul do input quando ele estiver selecionado*/
+
+}
