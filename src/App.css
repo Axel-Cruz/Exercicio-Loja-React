@@ -1,25 +1,4 @@
 
-.botao_logar{
-  background: linear-gradient(90deg, #5f43b2 0%, #7a4df4 100%);
-  color:#fff; /*cor da fonte*/
-  border-radius: 8px; /*borda arredondada*/
-  height: 34px; /*altura do botao*/
-  width: 70%; /*largura do botao, que é o mesmo do container_input*/
-  border: none; /*sem borda*/
-  cursor: pointer; /*muda o cursor do mouse quando passa o mouse nele */
-  box-shadow: 0 6px 14px rgba(95, 67, 178, 0.28);
-  transition:
-    transform 0.12s ease,
-    box-shadow 0.12s ease,
-    filter 0.12s ease;
-}
-
-.botao_logar:active{
-    transform: translateY(1px) scale(0.98);
-  box-shadow: 0 2px 8px rgba(95, 67, 178, 0.35);
-  filter: brightness(0.95); 
-}
-
 .link_criar_conta{
   color:#5f43b2; /*cor do link*/
   text-decoration: none; /*remove o sublinhado do link*/

@@ -1,16 +1,16 @@
 body {
-  background-color: #9B83CD;
+  background-color: #9b83cd;
 }
 
 /*Container das telas Principal*/
-.container_telas_iniciais{
-    max-width: 800px; /*maximo de tamanho*/
-    margin:40px auto; /*vai centralizar a div*/
-    background-color: #fff;
+.container_telas_iniciais {
+  max-width: 800px; /*maximo de tamanho*/
+  margin: 40px auto; /*vai centralizar a div*/
+  background-color: #fff;
 
-    display: flex; /*um ao lado do outro flexivel*/
+  display: flex; /*um ao lado do outro flexivel*/
 }
-.container_esquerda_telas_iniciais{
+.container_esquerda_telas_iniciais {
   display: flex;
   align-items: center; /*vai centralizar*/
   justify-content: center; /*vai centralizar*/
@@ -45,9 +45,43 @@ body {
   width: 70%; /*tamanho do input*/
 }
 
-.container_input input{
+.container_input input {
   width: 90%; /*tamanho do input vai ter dentro da div*/
-  border:none; /*sem bordas*/
+  border: none; /*sem bordas*/
   outline: none; /*remover a borda azul do input quando ele estiver selecionado*/
+}
 
+/*Estilos dos selects da aplicação*/
+.container_select {
+  width: 70%; /*tamanho do select*/
+  padding: 3px; /*espaçamento interno dos elementos */
+  margin-bottom: 20px; /*vai dar distancia entre os inputs*/
+}
+.container_select select {
+  border: 1px solid #ccc; /*vai ter uma borda solida de 1px*/
+  border-radius: 12px; /*vai ficar com as bordas arredondadas*/
+  width: 100%; /*tamanho do select*/
+  height: 34px; /*altura do input*/
+}
+
+/*Botao Padrão da Aplicação*/
+.botao_telas_iniciais{
+  background: linear-gradient(90deg, #5f43b2 0%, #7a4df4 100%);
+  color:#fff; /*cor da fonte*/
+  border-radius: 8px; /*borda arredondada*/
+  height: 34px; /*altura do botao*/
+  width: 70%; /*largura do botao, que é o mesmo do container_input*/
+  margin-bottom: 5px; /*espaçamentos entre os elementos*/
+  border: none; /*sem borda*/
+  cursor: pointer; /*muda o cursor do mouse quando passa o mouse nele */
+  box-shadow: 0 6px 14px rgba(95, 67, 178, 0.28);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    filter 0.12s ease;
+}
+.botao_telas_iniciais:active{
+    transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(95, 67, 178, 0.35);
+  filter: brightness(0.95); 
 }

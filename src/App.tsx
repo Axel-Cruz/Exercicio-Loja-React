@@ -26,7 +26,7 @@ function App() {
           <input placeholder="Password" />
         </div>
 
-        <button className="botao_logar">Sign In</button>
+        <button className="botao_telas_iniciais">Sign In</button>
 
         <p>
           New Here ?{" "}
