@@ -8,6 +8,6 @@ import CriarConta from './pages/CriarConta/CriarConta.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <CriarConta />
+    <App />
   </StrictMode>,
 )

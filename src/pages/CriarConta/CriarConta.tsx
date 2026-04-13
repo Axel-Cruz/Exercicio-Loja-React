@@ -1,94 +1,154 @@
-import { useState } from "react"; //importando o useState para criar variaveis de estado dentro do componente
+import { useState } from "react"; 
+// useState é um Hook do React. Ele permite criar variáveis que "guardam estado" no componente.
+// Sempre que o estado muda, o React atualiza a interface automaticamente.
 
-import { FaRegUser } from "react-icons/fa";
-import "./CriarConta.css"; // importando o css para a tela de criar conta
-import { MdOutlineEmail } from "react-icons/md";
-import { RiLockPasswordLine } from "react-icons/ri";
+import { FaRegUser } from "react-icons/fa"; // Ícone de usuário
+import { MdOutlineEmail } from "react-icons/md"; // Ícone de e-mail
+import { RiLockPasswordLine } from "react-icons/ri"; // Ícone de senha
+import "./CriarConta.css"; // Importa os estilos específicos desta página
 
-/* useState -> perimite que voce crie uma variavel de estado dentro do componente.*/
+import Swal from "sweetalert2"; 
+// Biblioteca para mostrar mensagens visuais (pop-ups) bonitas e amigáveis ao usuário.
 
-//Sempre que for começar uma funcao comecar coma a letra maiuscula
+// Em React, todo componente deve começar com letra maiúscula.
+// Um componente é uma função que retorna o que será exibido na tela (JSX).
 function CriarConta() {
-  const [nome, setNome] = useState(""); //criando uma variavel de estado para armazenar o valor do input de nome, o valor inicial é uma string vazia
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
 
-  //Função que vai ser chamada quando o usuario clicar no botao de cadastrar ou quando o formulario for submetido
-  function cadastrar(event: React.SubmitEvent) {
-    event.preventDefault(); //evitar que a pagina seja recarregada
-    console.log(nome); //vai mostrar no console o valor do input de nome.
-    console.log(email); //vai mostrar no console o valor do input de email.
-    console.log(senha); //vai mostrar no console o valor do input de senha.
+  // ============================
+  // ESTADOS (dados do formulário)
+  // ============================
+  // Cada useState guarda o valor digitado pelo usuário.
+  // Formato: [valorAtual, funçãoQueAtualiza]
+
+  const [nome, setNome] = useState(""); // Guarda o nome digitado
+  const [email, setEmail] = useState(""); // Guarda o e-mail digitado
+  const [senha, setSenha] = useState(""); // Guarda a senha digitada
+  const [plano, setPlano] = useState(""); // Guarda o plano selecionado
+
+  // ======================================
+  // FUNÇÃO EXECUTADA AO ENVIAR O FORMULÁRIO
+  // ======================================
+  async function cadastrar(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault(); 
+    // Evita o comportamento padrão do formulário (recarregar a página).
+
+    try {
+      // Faz uma requisição para o backend enviando os dados digitados
+      const resposta = await fetch("http://localhost:3000/auth/register", {
+        method: "POST", // Método HTTP para enviar dados
+        headers: {
+          "Content-Type": "application/json", // Informando que estamos enviando JSON
+        },
+        body: JSON.stringify({
+          name: nome,
+          email: email,
+          password: senha,
+        }),
+      });
+
+      // Se a resposta do servidor não for OK (status 200–299), gera erro
+      if (!resposta.ok) {
+        throw new Error("Falha no cadastro");
+      }
+
+      // Caso tudo dê certo, exibe mensagem de sucesso
+      Swal.fire({
+        icon: "success",
+        title: "Conta Criada",
+        text: "Agora você pode fazer login e aproveitar a plataforma.",
+        confirmButtonText: "Beleza!",
+      });
+
+      // Opcional: limpar o formulário após o cadastro
+      setNome("");
+      setEmail("");
+      setSenha("");
+      setPlano("");
+
+    } catch (error) {
+      // Se algo der errado, mostra mensagem de erro
+      Swal.fire({
+        icon: "error",
+        title: "Ops...",
+        text: "Não foi possível cadastrar no momento. Tente novamente.",
+      });
+    }
   }
 
-  //Função que vai ser chamada quando o usuario digitar algo no input de nome.
-  function alterarNome(event: any) {
-    setNome(event.target.value); //vai mostrar no console o valor do input de nome.
-    // vai atualizar a variavel setNome com o valor do input de nome.
-  }
-  //Função que vai ser chamada quando o usuario digitar algo no input de email.
-  function alterarEmail(event: any) {
-    setEmail(event.target.value); //vai mostrar no console o valor do input de email.
-    // vai atualizar a variavel setEmail com o valor do input de email.
-  }
-
-  //Função que vai ser chamada quando o usuario digitar algo no input de senha.
-  function alterarSenha(event: any) {
-    setSenha(event.target.value); //vai mostrar no console o valor do input de senha.
-    // vai atualizar a variavel setSenha com o valor do input de senha.
-  }
-
+  // ========================
+  // INTERFACE (JSX)
+  // ========================
+  // JSX é parecido com HTML, mas permite usar variáveis e lógica JavaScript dentro.
   return (
     <div className="container_telas_iniciais">
+
+      {/* Área lateral esquerda (informativa) */}
       <div className="container_esquerda_telas_iniciais">
         <h2>Crie sua Conta</h2>
         <p>Escolha seu plano e comece a anunciar hoje mesmo.</p>
       </div>
 
+      {/* Formulário de cadastro */}
       <form onSubmit={cadastrar} className="container_direita_telas_iniciais">
-        <h1>Cadrastro</h1>
+        <h1>Cadastro</h1>
+
+        {/* Campo de nome */}
         <div className="container_input">
           <FaRegUser color="#ccc" size={20} />
           <input
             placeholder="Nome"
             required
             value={nome}
-            onChange={alterarNome}
+            onChange={(e) => setNome(e.target.value)}
           />
         </div>
+
+        {/* Campo de e-mail */}
         <div className="container_input">
           <MdOutlineEmail color="#ccc" size={20} />
           <input
-            placeholder="User or Email"
+            placeholder="Email"
             required
             value={email}
-            onChange={alterarEmail}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
+
+        {/* Campo de senha */}
         <div className="container_input">
           <RiLockPasswordLine color="#ccc" size={20} />
           <input
-            placeholder="Passaword"
+            type="password" // Tipo senha oculta os caracteres
+            placeholder="Senha"
             required
             value={senha}
-            onChange={alterarSenha}
+            onChange={(e) => setSenha(e.target.value)}
           />
         </div>
+
+        {/* Seleção do plano */}
         <div className="container_select">
-          <select required >
-            <option>Selecione uma opção </option>
-            <option value="Gratuito"> Gratuito - 10 Anuncios por mês</option>
-            <option value="Bronze"> Bronze - 20 Anuncios por mês</option>
-            <option value="Prata"> Prata - 50 Anuncios por mês</option>
-            <option value="Ouro"> Ouro - Anuncios Ilimitados</option>
+          <select
+            required
+            value={plano}
+            onChange={(e) => setPlano(e.target.value)}
+          >
+            <option value="">Selecione um plano</option>
+            <option value="Gratuito">Gratuito - 10 anúncios por mês</option>
+            <option value="Bronze">Bronze - 20 anúncios por mês</option>
+            <option value="Prata">Prata - 50 anúncios por mês</option>
+            <option value="Ouro">Ouro - anúncios ilimitados</option>
           </select>
         </div>
+
+        {/* Botão de envio */}
         <button type="submit" className="botao_telas_iniciais">
-          Sign In
+          Cadastrar
         </button>
       </form>
     </div>
   );
 }
 
-export default CriarConta; //Estou exportando para abrir em outra tela, no caso a main.tsx
+// Exporta o componente para que ele possa ser usado em outros arquivos (ex: rotas ou páginas).
+export default CriarConta;
