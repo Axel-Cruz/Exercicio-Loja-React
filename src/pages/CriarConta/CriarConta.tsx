@@ -48,7 +48,8 @@ function CriarConta() {
 
       // Se a resposta do servidor não for OK (status 200–299), gera erro
       if (!resposta.ok) {
-        throw new Error("Falha no cadastro");
+        const dadosError = await resposta.json(); // Tenta ler a mensagem de erro do servidor
+        throw new Error(dadosError.error);
       }
 
       // Caso tudo dê certo, exibe mensagem de sucesso
@@ -57,7 +58,7 @@ function CriarConta() {
         title: "Conta Criada",
         text: "Agora você pode fazer login e aproveitar a plataforma.",
         confirmButtonText: "Beleza!",
-      });
+      });''
 
       // Opcional: limpar o formulário após o cadastro
       setNome("");
