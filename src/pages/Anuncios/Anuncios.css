@@ -1,0 +1,32 @@
+.container_lista_anuncios{
+    max-width: 1024px; /*maximo de tamanho que a tela vai ter*/
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px; /*espacamento interno*/
+}
+.container_lista_anuncios h1{
+    text-align: center; /*vai deixar o texto centralizado na tela */
+}
+.table_anuncios{
+    width: 100%; /*vai ficar 100% do tamanho da div*/
+    border-collapse: collapse; /*vai deixar as bordas do cabeçalho e do corpo da tabela juntas*/
+    
+
+}
+.table_anuncios thead{
+    font-size: 20px; /*tamanho da fonte do cabeçalho*/
+    background-color: #7a4df4; /*cor de dentro do cabeçalho*/
+    color: #fff; /*cor da fonte*/
+}
+.table_anuncios tbody tr{
+    text-align: center; /*vai deixar o conteudo do tr centralizado*/
+    font-size: 18px;
+    border-bottom: 1px solid #7a4df4; /*vai colocar uma borda embaixo de cada linha */
+}
+.table_anuncios tbody tr:nth-child(odd) /*odd = linhas ímpares (1, 3, 5, 7…)*/ {
+  background-color: #f3edff;
+}
+
+.table_anuncios tbody tr:nth-child(even) /*even = linhas pares (2, 4, 6, 8…)*/ {
+  background-color: #fff;
+}
