@@ -10,6 +10,8 @@ import "./CriarConta.css"; // Importa os estilos específicos desta página
 import Swal from "sweetalert2"; 
 // Biblioteca para mostrar mensagens visuais (pop-ups) bonitas e amigáveis ao usuário.
 
+import { useNavigate } from "react-router"; // Caminho para navegar entre páginas 
+
 // Em React, todo componente deve começar com letra maiúscula.
 // Um componente é uma função que retorna o que será exibido na tela (JSX).
 function CriarConta() {
@@ -24,6 +26,8 @@ function CriarConta() {
   const [email, setEmail] = useState(""); // Guarda o e-mail digitado
   const [senha, setSenha] = useState(""); // Guarda a senha digitada
   const [plano, setPlano] = useState(""); // Guarda o plano selecionado
+
+  const navegar = useNavigate(); // Caminho para navegar para outras páginas após o cadastro
 
   // ======================================
   // FUNÇÃO EXECUTADA AO ENVIAR O FORMULÁRIO
@@ -59,6 +63,9 @@ function CriarConta() {
         text: "Agora você pode fazer login e aproveitar a plataforma.",
         confirmButtonText: "Beleza!",
       });''
+
+      //Navegar de volta para tela de login.
+      navegar("/")
 
       // Opcional: limpar o formulário após o cadastro
       setNome("");
