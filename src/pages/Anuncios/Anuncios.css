@@ -3,6 +3,8 @@
     background: #fff;
     border-radius: 8px;
     padding: 10px; /*espacamento interno*/
+    margin: 0 auto; /*vai centralizar a div*/
+
 }
 .container_lista_anuncios h1{
     text-align: center; /*vai deixar o texto centralizado na tela */
