@@ -1,0 +1,21 @@
+.container_home{
+    max-width: 1200px; /*largura maxima do container*/
+    padding: 10px; /*espacamento interno*/
+    margin: 40px auto; /*vai deixar 40px de cima pra baixo e p resto centralizado*/
+    background-color: #E7EBF0;
+    border-radius: 12px; /*bordas arredondadas*/
+    height: 100vh; /*altura da tela, assim a div vai ocupar toda a tela do navegador*/
+}
+.header_home_anuncios {
+    display: flex;
+    justify-content: space-between; /* joga um pra esquerda e outro pra direita */
+    align-items: center; /*vai centralizar os itens verticalmente*/
+}
+
+.header_home_anuncios_botao{
+    width: 120px;
+    
+}
+.item_anuncio{
+    
+}
