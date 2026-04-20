@@ -4,7 +4,7 @@
     margin: 40px auto; /*vai deixar 40px de cima pra baixo e p resto centralizado*/
     background-color: #E7EBF0;
     border-radius: 12px; /*bordas arredondadas*/
-    height: 100vh; /*altura da tela, assim a div vai ocupar toda a tela do navegador*/
+    
 }
 .header_home_anuncios {
     display: flex;
@@ -16,6 +16,71 @@
     width: 120px;
     
 }
-.item_anuncio{
-    
+/* CSS DO CONTAINER DE ANUNCIOS */
+
+.container_cards_anuncios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+/* CSS DO CARD  */
+
+.card_home_anuncios {
+  width: 45%;
+  display: flex;
+  border-radius: 10px;
+  background-color: #f2f3f5;
+}
+
+@media (max-width: 800px) {
+  .card_home_anuncios {
+    width: 100%;
+  }
+}
+
+.imagem_card_home_anuncios {
+  width: 150px;
+  height: auto;
+  border-top-left-radius: 8px;
+}
+
+.card_info_produto_home_anuncios {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 10px;
+}
+
+.card_info_produto_home_anuncios h2 {
+  font-size: 20px;
+}
+
+.card_info_produto_home_anuncios p {
+  font-size: 15px;
+}
+
+.card_info_produto_home_anuncios span {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.card_parcelamento_produto_home_anuncios {
+  font-weight: bold;
+}
+
+.card_info_produto_botao {
+  width: 150px;
+  background-color: #00a650;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card_info_produto_botao:hover {
+  background-color: #008f45;
 }

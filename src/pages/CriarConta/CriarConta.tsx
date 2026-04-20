@@ -62,7 +62,7 @@ function CriarConta() {
         title: "Conta Criada",
         text: "Agora você pode fazer login e aproveitar a plataforma.",
         confirmButtonText: "Beleza!",
-      });''
+      });
 
       //Navegar de volta para tela de login.
       navegar("/")
@@ -73,7 +73,7 @@ function CriarConta() {
       setSenha("");
       setPlano("");
 
-    } catch (error) {
+    } catch (_error) {
       // Se algo der errado, mostra mensagem de erro
       Swal.fire({
         icon: "error",
