@@ -9,6 +9,22 @@
 .container_lista_anuncios h1{
     text-align: center; /*vai deixar o texto centralizado na tela */
 }
+.header_lista_anuncios {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.botao_novo_anuncio {
+  width: 180px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-bottom: 0;
+}
 .table_anuncios{
     width: 100%; /*vai ficar 100% do tamanho da div*/
     border-collapse: collapse; /*vai deixar as bordas do cabeçalho e do corpo da tabela juntas*/

@@ -31,6 +31,12 @@ body {
 
 /*Estilos do input padrao da aplicação*/
 
+.containers_inputs {
+  display: flex;
+  gap: 20px;
+}
+
+
 .container_input {
   height: 34px; /*altura do input*/
   border: 1px solid #ccc; /*vai ter uma borda solida de 1px*/

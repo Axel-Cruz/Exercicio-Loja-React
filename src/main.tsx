@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home.tsx";
 import Login from "./pages/Login/Login.tsx";
 import CriarConta from "./pages/CriarConta/CriarConta.tsx";
 import Anuncios from "./pages/Anuncios/Anuncios.tsx";
+import FormAnuncios from "./pages/FormAnuncios/FormAnuncios.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/login" element={<Login />}></Route>
         <Route path="/criar-conta" element={<CriarConta />}></Route>
         <Route path="/anuncios" element={<Anuncios />}></Route>
+        <Route path="/anuncios/cadastro" element={<FormAnuncios />}></Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>,

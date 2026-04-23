@@ -47,6 +47,7 @@ function CriarConta() {
           name: nome,
           email: email,
           password: senha,
+          plan: plano,
         }),
       });
 
