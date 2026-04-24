@@ -3,6 +3,8 @@ import { useState, useEffect } from "react"; //USEEFFECT É PARA CARREGAR OS DAD
 import "./Anuncios.css"; // importa o css
 import { Link } from "react-router";
 
+
+
 function Anuncios() {
 
   const [anuncios, setAnuncios] = useState([])
@@ -50,7 +52,8 @@ carregarAnuncios();
           <th>Ações</th>
         </thead>
         <tbody>
-            {anuncios.map((anuncio ) =>  <tr>
+            {anuncios.map((anuncio ) =>  
+            <tr key={anuncio.id}> {/* O map é para percorrer o array de anuncios e mostrar cada anuncio na tela. O key é para dar uma chave única para cada elemento da lista, para que o React possa identificar qual elemento foi alterado, adicionado ou removido. */}
             <td> {anuncio.id }</td>
             <td>
               <img width={40}

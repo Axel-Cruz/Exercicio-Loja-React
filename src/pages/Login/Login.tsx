@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"; // para usar para variaveis estaticas
 import "./Login.css"; //importando o css para o app
 
 //Para usar os icones do react-icons, primeiro tem que instalar a biblioteca com o comando npm install react-icons
